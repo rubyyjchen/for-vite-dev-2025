@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <!-- 應用程式 App 生成位置 -->
+    <div id="app">
+        {{ num }}
+        <!-- v-on 為監聽器，對他做特定動作可觸發特定函式 -->
+        <button type="button" v-on:click="clickMe">點我加 1</button>
+    </div>
+    <script>
+        console.log(Vue);
+        const { createApp, ref } = Vue; // 解構，取出特定方法
+
+        const app = createApp({ // 建立根元件
+            // Composition API
+            setup() {
+                // 在 vue 裡面定義值多用 const，取值要用 .value
+                // ref 是一個函式，用來定義響應式變數
+                const num = ref(1);
+                // setInterval 每多少毫秒產生什麼動作
+                // setInterval(() => {
+                //     num.value++; // 每秒 num 變數加 1
+                // }, 500); // 每 1000 毫秒（1 秒）執行一次
+                function clickMe() {
+                    num.value++; // 每次點擊按鈕 num 變數加 1
+                }
+                return {
+                    num, // 返回 num 變數，使其可在模板中使用
+                    clickMe // 返回 clickMe 函式，使其可在模板中使用
+                };
+            }
+        });
+        app.mount('#app'); // 決定生成位置
+    </script>
+</body>
+
+</html>
