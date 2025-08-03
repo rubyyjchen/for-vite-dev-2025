@@ -44,7 +44,7 @@ document.addEventListener('click', (e) => {
       <div class="nav-container">
         <!-- 標題 -->
         <div class="nav-title">
-          <h2>Vue3 專案</h2>
+          <h2 @click="currentPage = 'hw1'" class="nav-brand">Vue3 專案</h2>
         </div>
         
         <!-- 導航選單 -->
@@ -57,8 +57,8 @@ document.addEventListener('click', (e) => {
             </button>
             <div class="dropdown-menu" :class="{ 'show': activeDropdown === 'vue' }">
               <a @click="selectPage('init')" class="dropdown-item">Init</a>
-              <a @click="selectPage('video')" class="dropdown-item">Video</a>
-              <a @click="selectPage('v-model')" class="dropdown-item">V-Model</a>
+              <a @click="selectPage('video')" class="dropdown-item">2024 Vue Intro</a>
+              <a @click="selectPage('v-model')" class="dropdown-item">v-model</a>
             </div>
           </div>
           
@@ -140,6 +140,17 @@ body {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.nav-brand {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.nav-brand:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .nav-menu {
