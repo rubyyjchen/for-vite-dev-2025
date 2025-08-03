@@ -4,6 +4,7 @@ import { ref } from 'vue'
 import App from './App.vue'
 import AppNew from './AppNew.vue'
 import VModel from './VModel.vue'
+import VBind from './VBind.vue'
 import HWOne from './HWOne.vue'
 import HWTwo from './HWTwo.vue'
 import HWThree from './HWThree.vue'
@@ -59,6 +60,7 @@ document.addEventListener('click', (e) => {
               <a @click="selectPage('init')" class="dropdown-item">Init</a>
               <a @click="selectPage('video')" class="dropdown-item">2024 Vue Intro</a>
               <a @click="selectPage('v-model')" class="dropdown-item">v-model</a>
+              <a @click="selectPage('v-bind')" class="dropdown-item">v-bind</a>
             </div>
           </div>
           
@@ -83,6 +85,7 @@ document.addEventListener('click', (e) => {
       <App v-if="currentPage === 'init'" />
       <AppNew v-else-if="currentPage === 'video'" />
       <VModel v-else-if="currentPage === 'v-model'" />
+      <VBind v-else-if="currentPage === 'v-bind'" />
       <HWOne v-else-if="currentPage === 'hw1'" />
       <HWTwo v-else-if="currentPage === 'hw2'" />
       <HWThree v-else-if="currentPage === 'hw3'" />
