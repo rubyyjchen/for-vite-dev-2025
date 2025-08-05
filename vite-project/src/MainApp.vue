@@ -7,6 +7,7 @@ import VModel from './VModel.vue'
 import VBind from './VBind.vue'
 import VOn from './VOn.vue'
 import VFor from './VFor.vue' 
+import VHtml from './VHtml.vue'
 import HWOne from './HWOne.vue'
 import HWTwo from './HWTwo.vue'
 import HWThree from './HWThree.vue'
@@ -65,6 +66,7 @@ document.addEventListener('click', (e) => {
               <a @click="selectPage('v-bind')" class="dropdown-item">v-bind</a>
               <a @click="selectPage('v-on')" class="dropdown-item">v-on</a>
               <a @click="selectPage('v-for')" class="dropdown-item">v-for/v-if/v-show</a>
+              <a @click="selectPage('v-html')" class="dropdown-item">v-html</a>
             </div>
           </div>
           
@@ -92,6 +94,7 @@ document.addEventListener('click', (e) => {
       <VBind v-else-if="currentPage === 'v-bind'" />
       <VOn v-else-if="currentPage === 'v-on'" />
       <VFor v-else-if="currentPage === 'v-for'" />
+      <VHtml v-else-if="currentPage === 'v-html'" />
       <HWOne v-else-if="currentPage === 'hw1'" />
       <HWTwo v-else-if="currentPage === 'hw2'" />
       <HWThree v-else-if="currentPage === 'hw3'" />
