@@ -2,7 +2,8 @@
 <script setup>
 import { ref } from 'vue'
 import App from './App.vue'
-import AppNew from './AppNew.vue'
+import WeekOne from './WeekOne.vue'
+import WeekOne_New from './WeekOne_New.vue'
 import VModel from './VModel.vue'
 import VBind from './VBind.vue'
 import VOn from './VOn.vue'
@@ -61,7 +62,8 @@ document.addEventListener('click', (e) => {
             </button>
             <div class="dropdown-menu" :class="{ 'show': activeDropdown === 'vue' }">
               <a @click="selectPage('init')" class="dropdown-item">Init</a>
-              <a @click="selectPage('video')" class="dropdown-item">2024 Vue Intro</a>
+              <a @click="selectPage('week1_2024')" class="dropdown-item">2024 Week1</a>
+              <a @click="selectPage('week1_2025')" class="dropdown-item">2025 Week1</a>
               <a @click="selectPage('v-model')" class="dropdown-item">v-model</a>
               <a @click="selectPage('v-bind')" class="dropdown-item">v-bind</a>
               <a @click="selectPage('v-on')" class="dropdown-item">v-on</a>
@@ -89,7 +91,8 @@ document.addEventListener('click', (e) => {
     <main class="main-content">
       <!-- 條件渲染不同的組件 -->
       <App v-if="currentPage === 'init'" />
-      <AppNew v-else-if="currentPage === 'video'" />
+      <WeekOne v-else-if="currentPage === 'week1_2024'" />
+      <WeekOne_New v-else-if="currentPage === 'week1_2025'" />
       <VModel v-else-if="currentPage === 'v-model'" />
       <VBind v-else-if="currentPage === 'v-bind'" />
       <VOn v-else-if="currentPage === 'v-on'" />
