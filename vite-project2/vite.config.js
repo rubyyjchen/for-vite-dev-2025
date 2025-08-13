@@ -6,6 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/for-vite-dev-2025/vite-project2/',  // 設定為 vite-project 的子路徑
   plugins: [
     vue(),
     vueDevTools(),
