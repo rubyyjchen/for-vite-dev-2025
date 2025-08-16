@@ -14,7 +14,7 @@ import HWOne from './HWOne.vue'
 import HWTwo from './HWTwo.vue'
 import HWThree from './HWThree.vue'
 
-const currentPage = ref('hw1')
+const currentPage = ref('hw2')
 const activeDropdown = ref(null)
 
 const toggleDropdown = (dropdown) => {
